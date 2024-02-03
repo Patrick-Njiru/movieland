@@ -1,0 +1,49 @@
+:root {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.app { background-color: rgba(46, 45, 45,1); }
+
+.form_btn { color: rgb(100, 99, 99);}
+
+form:hover .form_btn { color: rgb(158, 155, 155); }
+
+.movie { 
+    min-width: 180px;
+    width: 18vw;
+}
+
+.movie:hover {
+    min-width: 185px;
+    width: 19vw;
+}
+
+ .movie_cover  {
+    color: transparent;
+    height: 100%;
+    width: 100%;
+}
+
+.movie:hover .movie_cover {
+    color: rgba(254, 255, 255, 0.568);
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.movie_img {
+    min-width: 180px;
+    width: 18vw;
+}
+
+.movie:hover .movie_img { width: 100%; }
+
+.movie_details { display: none; }
+
+.movie:hover .movie_details {
+    display: block;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+}
