@@ -64,7 +64,7 @@ const App = () => {
 					</form>
 				</div>
 				
-				<div className="d-flex justify-content-around" style={{flexWrap: "wrap"}}>
+				<div className="d-flex justify-content-around align-items-center" style={{flexWrap: "wrap"}}>
 					<MovieCard movie={MOVIE} />
 					<MovieCard movie={MOVIE} />
 					<MovieCard movie={MOVIE} />
