@@ -7,7 +7,7 @@ const MovieCard = (collection) => (
 		<img 
 			className="movie_img card-image rounded img-fluid"
 			src={collection.movie.Poster != 'N/A' ? collection.movie.Poster 
-				: 'https://via.placeholder.com/200x400'} 
+				: 'https://via.placeholder.com/200x270'} 
 			alt={collection.movie.Title} 
 		/>
 

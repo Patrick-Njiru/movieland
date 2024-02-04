@@ -1,22 +1,40 @@
 :root {
-    box-sizing: border-box;
     width: 100%;
     padding: 0;
     margin: 0;
+    
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .app { 
     background-color: rgba(46, 45, 45,1);
-    height: 100vh; 
+    min-height: 100vh; 
 }
 
-.form_btn { color: rgb(100, 99, 99);}
+.app_title {
+    background: -webkit-gradient(linear, left top, right top, from(#00BCD400), color-stop(0%, #2E2D2D), color-stop(50%, #A00707), to(#2E2D2D));
+    background: -o-linear-gradient(left, #00BCD400 0%, #2E2D2D 0%, #A00707 50%, #2E2D2D 100%);
+    background: linear-gradient(90deg, #00BCD400 0%, #2E2D2D 0%, #A00707 50%, #2E2D2D 100%);
+}
 
-form:hover .form_btn { color: rgb(158, 155, 155); }
+.search_btn { color: rgb(100, 99, 99);}
+
+.search:hover .search_btn { color: rgb(158, 155, 155); }
 
 /* MovieCard */
 
-.movie { width: 200px; }
+.movie { 
+    width: 200px;
+
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+
+    -webkit-transition: width 0.7s;
+    -o-transition: width 0.7s;
+    transition: width 0.7s; 
+}
 
 .movie:hover { width: 205px; }
 
@@ -28,7 +46,7 @@ form:hover .form_btn { color: rgb(158, 155, 155); }
 
 .movie:hover .movie_cover {
     color: red;
-    background-color: rgba(0, 0, 0, 0.815);
+    background-color: rgba(0, 0, 0, 0.596);
 }
 
 .movie_details { display: none; }
