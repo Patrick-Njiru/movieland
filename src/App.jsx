@@ -4,18 +4,25 @@ import MovieCard from "./MovieCard"
 
 const App = () => {
 	const [movies, setMovies] = useState([]),
-	[search, setSearch] = useState('superman'),
+	[search, setSearch] = useState(''),
 	
-	API_URL = 'http://www.omdbapi.com/?i=tt3896198&apikey=911232c4&s='
+	API = 'http://www.omdbapi.com/?i=tt3896198&apikey=911232c4&s='
 	
-	const searchMovie = async (title) => {
-		const response = await fetch(API_URL+title),
-		data = await response.json()
+	const getMovies = async () => {
+		const response = await fetch(API + 'batman')
+		const data = await response.json()
 		setMovies(data.Search)
 	}
 	
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	useEffect(() => {searchMovie(search)}, [])
+	const searchMovie = async (title) => {
+		const response = await fetch(API + title),
+			data = await response.json()
+		setMovies(data.Search)
+	}
+	
+	useEffect(() => {
+		search.length < 3 ? getMovies() : searchMovie(search)
+	}, [search])
 
 	return (
 		<div className="text-light p-2 app">
@@ -46,13 +53,11 @@ const App = () => {
 					</div>
 				</div>
 				
-				<div className="d-flex justify-content-around align-items-center" style={{flexWrap: "wrap"}}>
+				<div className="d-flex justify-content-evenly align-items-center" style={{flexWrap: "wrap"}}>
 					{typeof movies == 'object' && movies.length > 0 ? 
-						movies.map(movie => <MovieCard movie = {movie} key={movie.imdbID} />)
+						movies.map(movie => <MovieCard {...movie} key={movie.imdbID} />)
 						:
-						<div className="p-5 m-5 text-center lead text-danger fw-bold h1 bg-transparent">
-							No Movies to Display
-						</div> 
+						<div className="loader mt-5"></div>
 					}
 				</div>
 			</div>
