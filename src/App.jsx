@@ -22,7 +22,7 @@ const App = () => {
 	
 	useEffect(() => {
 		// no long empty strings and or strings less than 3 letters long
-		search.length < 3 || search.split('').filter(char => char !== ' ').join('').length < 1 ?
+		search.length < 3 || search.split('').filter(char => char !== ' ').join('').length < 3 ?
 			getMovies() : searchMovie(search.split('').filter(char => char !== ' ').join(''))
 	}, [search])
 
