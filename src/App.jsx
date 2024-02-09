@@ -6,7 +6,7 @@ const App = () => {
 	const [movies, setMovies] = useState([])
 	const refContainer = useRef(null)
 	
-	const API = 'http://www.omdbapi.com/?i=tt3896198&apikey=911232c4&s='
+	const API = 'https://www.omdbapi.com/?i=tt3896198&apikey=911232c4&s='
 	
 	const loadDefaultMovies = async () => {
 		const response = await fetch(API + 'batman')
